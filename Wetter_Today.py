@@ -10,27 +10,27 @@ def get_weather():
     data = response.json()
     
     if data["cod"] != 200:
-        result_label.config(text="Stadt nicht gefunden!")
+        result_label.config(text="City could not be found")
         return
     
     temp = data["main"]["temp"]
     description = data["weather"][0]["description"]
     humidity = data["main"]["humidity"]
     
-    result = f"Temperatur: {temp} °C\nLuftfeuchtigkeit: {humidity}%\nWetter: {description.capitalize()}"
+    result = f"Temperature: {temp} °C\nHumidity: {humidity}%\nWeather: {description.capitalize()}"
     result_label.config(text=result)
 
 root = tk.Tk()
-root.title("Wetter-App")
+root.title("Weather-App - Today")
 root.geometry("300x250")
 
-title_label = tk.Label(root, text="Wetter abfragen", font=("Arial", 14, "bold"))
+title_label = tk.Label(root, text="Get Weather Information from: ", font=("Arial", 14, "bold"))
 title_label.pack(pady=10)
 
 city_entry = tk.Entry(root, width=25, font=("Arial", 12))
 city_entry.pack(pady=5)
 
-get_button = tk.Button(root, text="Wetter anzeigen", command=get_weather)
+get_button = tk.Button(root, text="Show", command=get_weather)
 get_button.pack(pady=10)
 
 result_label = tk.Label(root, text="", font=("Arial", 11))

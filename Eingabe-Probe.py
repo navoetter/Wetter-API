@@ -10,7 +10,7 @@ response = requests.get(url)
 data = response.json()
 
 if data["cod"] != 200:
-    print("❌ Stadt nicht gefunden!")
+    print("Stadt nicht gefunden!")
 else:
     print(f"Stadt: {data['name']}")
     print(f"Temperatur: {data['main']['temp']} °C")

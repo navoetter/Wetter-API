@@ -47,7 +47,7 @@ def get_weather():
 # Tkinter-Fenster
 root = tk.Tk()
 root.title("Weather-App - Forecast")
-root.geometry("350x450")
+root.geometry("350x500")
 
 title_label = tk.Label(root, text="Weekly Weather", font=("Arial", 14, "bold"))
 title_label.pack(pady=10)
